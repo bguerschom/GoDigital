@@ -46,9 +46,7 @@ const AuthForm = () => {
                      M100,300 C300,300 500,100 700,300"
              dur="5s" repeatCount="indefinite"/>
   </path>
-  
-  <!-- Login Container -->
-  <rect x="250" y="150" width="300" height="400" fill="white" rx="15"/>
+
 </svg>
         </div>
       

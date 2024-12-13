@@ -1,16 +1,12 @@
 // src/main.jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 
 // Styles
 import './styles/globals.css'
 
-// Toast notifications (optional but recommended)
-import { Toaster } from 'react-hot-toast'
-
-// Theme provider if you're using a dark/light mode
+// Theme provider 
 import { ThemeProvider } from '@/components/theme-provider'
 
 // Error boundary for catching React errors
@@ -57,30 +53,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light" storageKey="sss-portal-theme">
         <App />
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 5000,
-            style: {
-              background: '#363636',
-              color: '#fff',
-            },
-            success: {
-              duration: 3000,
-              iconTheme: {
-                primary: '#4ade80',
-                secondary: '#fff',
-              },
-            },
-            error: {
-              duration: 4000,
-              iconTheme: {
-                primary: '#ef4444',
-                secondary: '#fff',
-              },
-            },
-          }}
-        />
       </ThemeProvider>
     </ErrorBoundary>
   </React.StrictMode>,

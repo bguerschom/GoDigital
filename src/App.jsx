@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import AuthForm from './components/auth/AuthForm'
+import AdminLayout from '@/components/layout/AdminLayout'
+import Dashboard from '@/pages/admin/Dashboard'
 
 // Import your other components here
 

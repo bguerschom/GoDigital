@@ -24,18 +24,18 @@ const AdminLayout = () => {
 
       {/* Main Content */}
       <div 
-        className={`pt-16 flex flex-col min-h-screen ${
+        className={`pt-16 flex flex-col ${
           isSidebarOpen ? 'lg:ml-16' : ''
-        } transition-all duration-300 ease-in-out`}
+        } transition-all duration-300 ease-in-out pb-16`} // Added padding bottom for footer
       >
         {/* Page Content */}
         <main className="flex-grow p-6">
           <Outlet />
         </main>
-
-        {/* Footer */}
-        <Footer />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

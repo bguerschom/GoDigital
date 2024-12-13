@@ -34,23 +34,21 @@ const AuthForm = () => {
     <div className="min-h-screen bg-[#0A2647] flex items-center justify-center p-4 relative overflow-hidden">
 
       <div className="absolute inset-0 overflow-hidden">
-      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#0A2647"/>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0A2647"/>
   
-  <g fill="rgba(255,255,255,0.1)">
-    <circle cx="100" cy="100" r="2">
-      <animateMotion path="M 0 0 L 20 20 L 40 0 Z" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="200" cy="150" r="2">
-      <animateMotion path="M 0 0 L -20 20 L -40 0 Z" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="300" cy="200" r="2">
-      <animateMotion path="M 0 0 L 30 -20 L 60 0 Z" dur="5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="400" cy="250" r="2">
-      <animateMotion path="M 0 0 L -30 -20 L -60 0 Z" dur="3.5s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Animated Flow -->
+  <path d="M100,300 C300,300 500,100 700,300" stroke="white" stroke-width="2" fill="none">
+    <animate attributeName="d" 
+             values="M100,300 C300,300 500,100 700,300;
+                     M100,300 C300,100 500,300 700,300;
+                     M100,300 C300,300 500,100 700,300"
+             dur="5s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Login Container -->
+  <rect x="250" y="150" width="300" height="400" fill="white" rx="15"/>
 </svg>
         </div>
       

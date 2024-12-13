@@ -11,8 +11,8 @@ export function ThemeProvider({
   defaultTheme = 'light',
   storageKey = 'sss-portal-theme',
 }) {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem(storageKey) || defaultTheme
+  const [theme, setTheme] = useState(() => 
+    localStorage.getItem(storageKey) || defaultTheme
   )
 
   useEffect(() => {
@@ -22,15 +22,8 @@ export function ThemeProvider({
     localStorage.setItem(storageKey, theme)
   }, [theme, storageKey])
 
-  const value = {
-    theme,
-    setTheme: (newTheme) => {
-      setTheme(newTheme)
-    },
-  }
-
   return (
-    <ThemeContext.Provider value={value}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   )

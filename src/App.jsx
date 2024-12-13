@@ -5,6 +5,12 @@ import ProtectedRoute from './components/auth/ProtectedRoute'
 import AuthForm from './components/auth/AuthForm'
 import AdminLayout from './components/layout/AdminLayout'
 import Dashboard from './pages/admin/Dashboard'
+import UserDashboard from './pages/user/Dashboard'
+
+// Import or create these components if they don't exist
+import UnauthorizedPage from './pages/error/UnauthorizedPage'
+import SuspendedPage from './pages/error/SuspendedPage'
+import NotFoundPage from './pages/error/NotFoundPage'
 
 function App() {
   return (

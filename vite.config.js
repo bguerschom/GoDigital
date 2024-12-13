@@ -15,9 +15,6 @@ build: {
       globals: {
         recharts: 'Recharts',
         xlsx: 'XLSX'
-      },
-      manualChunks: {
-        pdfjsLib: ['pdfjs-dist']
       }
     }
   }

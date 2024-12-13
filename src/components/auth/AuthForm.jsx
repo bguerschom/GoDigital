@@ -32,6 +32,28 @@ const AuthForm = () => {
 
   return (
     <div className="min-h-screen bg-[#0A2647] flex items-center justify-center p-4 relative overflow-hidden">
+
+      <div className="absolute inset-0 overflow-hidden">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0A2647"/>
+  
+  <g fill="rgba(255,255,255,0.1)">
+    <circle cx="100" cy="100" r="2">
+      <animateMotion path="M 0 0 L 20 20 L 40 0 Z" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="2">
+      <animateMotion path="M 0 0 L -20 20 L -40 0 Z" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="2">
+      <animateMotion path="M 0 0 L 30 -20 L 60 0 Z" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="250" r="2">
+      <animateMotion path="M 0 0 L -30 -20 L -60 0 Z" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
+        </div>
+      
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8 relative transform transition-all hover:scale-[1.01]">
           <div className="text-center mb-8">

@@ -2,19 +2,17 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '@/components/theme-provider'
 import { Button } from '@/components/ui/button'
-import { Menu, LogOut, Moon, Sun, Computer } from 'lucide-react'
+import { Menu, LogOut, Moon, Sun } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
 
 const Header = ({ onMenuClick, showMenuButton = true }) => {
   const { theme, setTheme } = useTheme()
   const { user, signOut } = useAuth()
   const navigate = useNavigate()
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
 
   return (
     <header className="bg-white dark:bg-gray-800 shadow-sm fixed top-0 w-full z-50">
@@ -45,34 +43,19 @@ const Header = ({ onMenuClick, showMenuButton = true }) => {
           )}
 
           <div className="flex items-center space-x-4 ml-auto">
-            {/* Theme Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  {theme === 'dark' ? (
-                    <Moon className="w-5 h-5" />
-                  ) : theme === 'system' ? (
-                    <Computer className="w-5 h-5" />
-                  ) : (
-                    <Sun className="w-5 h-5" />
-                  )}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme('light')}>
-                  <Sun className="mr-2 h-4 w-4" />
-                  <span>Light</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('dark')}>
-                  <Moon className="mr-2 h-4 w-4" />
-                  <span>Dark</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('system')}>
-                  <Computer className="mr-2 h-4 w-4" />
-                  <span>System</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="text-gray-600 dark:text-gray-300"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </Button>
 
             {/* User Name */}
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">

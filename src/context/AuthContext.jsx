@@ -9,22 +9,18 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('sss_user')
-    if (storedUser) {
-      const userData = JSON.parse(storedUser)
-      authApi.getCurrentUser(userData.id)
-        .then(currentUser => {
-          if (currentUser && currentUser.status === 'active') {
-            setUser(currentUser)
-          } else {
-            localStorage.removeItem('sss_user')
-          }
-        })
-        .catch(() => localStorage.removeItem('sss_user'))
-        .finally(() => setLoading(false))
-    } else {
-      setLoading(false)
+    const initAuth = async () => {
+      try {
+        const user = await authApi.getCurrentUser()
+        setUser(user)
+      } catch (error) {
+        console.error('Auth initialization error:', error)
+      } finally {
+        setLoading(false)
+      }
     }
+
+    initAuth()
   }, [])
 
   const signIn = async (username, password) => {

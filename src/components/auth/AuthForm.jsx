@@ -35,25 +35,23 @@ const AuthForm = () => {
 
              {/* Animated Background Flow */}
       <div className="absolute inset-0 overflow-hidden">
-        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0A2647;stop-opacity:1">
-        <animate attributeName="stop-color" values="#0A2647;#1B3B6F;#0A2647" dur="7s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#1B3B6F;stop-opacity:1">
-        <animate attributeName="stop-color" values="#1B3B6F;#0A2647;#1B3B6F" dur="7s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-    <pattern id="pattern1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)">
-        <animate attributeName="r" values="1;3;1" dur="3s" repeatCount="indefinite"/>
-      </circle>
-    </pattern>
-  </defs>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0A2647"/>
   
-  <rect width="100%" height="100%" fill="url(#grad1)"/>
-  <rect width="100%" height="100%" fill="url(#pattern1)"/>
+  <g fill="rgba(255,255,255,0.1)">
+    <circle cx="100" cy="100" r="2">
+      <animateMotion path="M 0 0 L 20 20 L 40 0 Z" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="2">
+      <animateMotion path="M 0 0 L -20 20 L -40 0 Z" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="2">
+      <animateMotion path="M 0 0 L 30 -20 L 60 0 Z" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="250" r="2">
+      <animateMotion path="M 0 0 L -30 -20 L -60 0 Z" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 </svg>
         </div>
       

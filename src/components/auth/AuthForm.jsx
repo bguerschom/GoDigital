@@ -39,6 +39,7 @@ const AuthForm = () => {
   <rect width="100%" height="100%" fill="#0A2647"/>
 
   <g fill="rgba(255,255,255,0.1)">
+
     <circle cx="50" cy="50" r="2">
       <animateMotion path="M 0 0 L 30 15 L 50 0 Z" dur="3s" repeatCount="indefinite"/>
     </circle>
@@ -69,8 +70,41 @@ const AuthForm = () => {
     <circle cx="400" cy="900" r="1.8">
       <animateMotion path="M 0 0 L -20 10 L -40 0 Z" dur="3.6s" repeatCount="indefinite"/>
     </circle>
+    
+
+    <circle cx="100" cy="100" r="2">
+      <animateMotion path="M 0 0 L 40 20 L 80 0 Z" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="300" r="1.5">
+      <animateMotion path="M 0 0 L -10 20 L -30 10 Z" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="100" r="2">
+      <animateMotion path="M 0 0 L 50 -15 L 70 0 Z" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="400" r="2.2">
+      <animateMotion path="M 0 0 L -35 10 L -60 0 Z" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="900" r="2.5">
+      <animateMotion path="M 0 0 L 30 -10 L 50 0 Z" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="200" r="2">
+      <animateMotion path="M 0 0 L 20 10 L 30 0 Z" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="1.8">
+      <animateMotion path="M 0 0 L -15 -25 L -25 0 Z" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="500" r="2">
+      <animateMotion path="M 0 0 L 25 20 L 50 0 Z" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="700" r="1.5">
+      <animateMotion path="M 0 0 L 15 -10 L 25 0 Z" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="600" r="2">
+      <animateMotion path="M 0 0 L -20 30 L -40 0 Z" dur="4s" repeatCount="indefinite"/>
+    </circle>
   </g>
 </svg>
+
 
         </div>
       

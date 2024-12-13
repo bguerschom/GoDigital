@@ -39,7 +39,6 @@ const AuthForm = () => {
   <rect width="100%" height="100%" fill="#0A2647"/>
 
   <g fill="rgba(255,255,255,0.1)">
-    <!-- Randomly distributed circles with varying animation paths -->
     <circle cx="50" cy="50" r="2">
       <animateMotion path="M 0 0 L 30 15 L 50 0 Z" dur="3s" repeatCount="indefinite"/>
     </circle>

@@ -33,21 +33,32 @@ const AuthForm = () => {
   return (
     <div className="min-h-screen bg-[#0A2647] flex items-center justify-center p-4 relative overflow-hidden">
 
+             {/* Animated Background Flow */}
       <div className="absolute inset-0 overflow-hidden">
-<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#0A2647"/>
-  
-  <!-- Animated Flow -->
-  <path d="M100,300 C300,300 500,100 700,300" stroke="white" stroke-width="2" fill="none">
-    <animate attributeName="d" 
-             values="M100,300 C300,300 500,100 700,300;
-                     M100,300 C300,100 500,300 700,300;
-                     M100,300 C300,300 500,100 700,300"
-             dur="5s" repeatCount="indefinite"/>
-  </path>
+        <svg className="absolute w-full h-full" preserveAspectRatio="none">
+          <path
+            className="animate-flow"
+            d="M0,200 C150,200 250,100 500,100 C750,100 850,200 1000,200"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            className="animate-flow-delayed"
+            d="M0,250 C150,250 250,150 500,150 C750,150 850,250 1000,250"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            className="animate-flow-slow"
+            d="M0,300 C150,300 250,200 500,200 C750,200 850,300 1000,300"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="2"
+            fill="none"
+          />
+        </svg> 
 
-</svg>
         </div>
       
       <div className="w-full max-w-md">

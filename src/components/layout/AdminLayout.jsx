@@ -9,7 +9,13 @@ const AdminLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      {/* Header */}
+      <Header 
+        onMenuClick={() => setIsSidebarOpen(true)}
+        showMenuButton={!isSidebarOpen}
+      />
+
       {/* Sidebar */}
       <Sidebar 
         isOpen={isSidebarOpen} 
@@ -17,15 +23,13 @@ const AdminLayout = () => {
       />
 
       {/* Main Content */}
-      <div className={`flex flex-col min-h-screen ${isSidebarOpen ? 'lg:ml-64' : ''} transition-margin duration-200 ease-in-out`}>
-        {/* Header */}
-        <Header 
-          onMenuClick={() => setIsSidebarOpen(true)}
-          showMenuButton={!isSidebarOpen}
-        />
-
+      <div 
+        className={`pt-16 min-h-screen ${
+          isSidebarOpen ? 'lg:ml-64' : ''
+        } transition-all duration-200 ease-in-out`}
+      >
         {/* Page Content */}
-        <main className="flex-grow p-6">
+        <main className="p-6">
           <Outlet />
         </main>
 

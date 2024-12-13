@@ -9,11 +9,9 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Check if there's a stored session
     const storedUser = localStorage.getItem('sss_user')
     if (storedUser) {
       const userData = JSON.parse(storedUser)
-      // Verify the stored user still exists and is active
       authApi.getCurrentUser(userData.id)
         .then(currentUser => {
           if (currentUser && currentUser.status === 'active') {
@@ -45,8 +43,7 @@ export const AuthProvider = ({ children }) => {
     user,
     signIn,
     signOut,
-    isAdmin: user?.role === 'admin',
-    isSupervisor: user?.role === 'supervisor',
+    isAdmin: user?.role === 'admin'
   }
 
   return (

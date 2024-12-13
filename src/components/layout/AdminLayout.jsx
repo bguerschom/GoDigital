@@ -15,6 +15,7 @@ import {
 import { useAuth } from '@/context/AuthContext'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
+import Footer from './Footer'
 
 const AdminLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)

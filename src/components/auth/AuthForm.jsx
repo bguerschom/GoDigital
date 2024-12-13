@@ -88,9 +88,6 @@ const AuthForm = () => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A2647] focus:border-transparent transition-all"
                   placeholder="Username"
                 />
-                <div className="absolute right-3 top-3 text-gray-400">
-                  <FileText className="w-5 h-5" />
-                </div>
               </div>
 
               <div className="relative">

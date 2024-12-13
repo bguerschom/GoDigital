@@ -117,10 +117,10 @@ const AuthForm = () => {
               </div>
             </div>
             <h2 className="text-2xl font-bold text-[#0A2647] mb-2">
-              Welcome to SSS-Portal
+              Welcome
             </h2>
             <p className="text-gray-600 animate-fade-in">
-              Sign in to access your portal
+              Sign in to access this portal
             </p>
           </div>
 

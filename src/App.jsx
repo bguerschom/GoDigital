@@ -1,12 +1,10 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import AuthForm from './components/auth/AuthForm'
-import AdminLayout from '@/components/layout/AdminLayout'
-import Dashboard from '@/pages/admin/Dashboard'
-
-// Import your other components here
+import AdminLayout from './components/layout/AdminLayout'
+import Dashboard from './pages/admin/Dashboard'
 
 function App() {
   return (
@@ -20,13 +18,6 @@ function App() {
           <Route path="/admin/*" element={
             <ProtectedRoute allowedRoles={['admin']}>
               <AdminLayout />
-            </ProtectedRoute>
-          } />
-          
-          {/* Protected routes - Supervisor */}
-          <Route path="/supervisor/*" element={
-            <ProtectedRoute allowedRoles={['supervisor', 'admin']}>
-              <SupervisorLayout />
             </ProtectedRoute>
           } />
           

@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <div 
-      className={`fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-200 ease-in-out ${
+      className={`fixed left-0 z-40 w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-200 ease-in-out h-[calc(100vh-4rem)] top-16 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >

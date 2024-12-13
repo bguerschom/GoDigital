@@ -9,53 +9,35 @@ if (!supabaseAnonKey) throw new Error('Missing environment variable: VITE_SUPABA
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
+// src/config/supabase.js
 export const authApi = {
   async login(username, password) {
     const { data, error } = await supabase
-      .from('users')
-      .select('id, username, fullname, role, status')
-      .eq('username', username)
-      .eq('password', password) // Note: In production, use proper password hashing
+      .rpc('verify_user_password', {
+        p_username: username,
+        p_password: password
+      })
       .single()
 
     if (error) throw error
     if (!data) throw new Error('Invalid credentials')
-    if (data.status !== 'active') throw new Error('Account is not active')
+
+    // Get user data if password is correct
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .select('id, username, fullname, role, status')
+      .eq('username', username)
+      .single()
+
+    if (userError) throw userError
+    if (userData.status !== 'active') throw new Error('Account is not active')
 
     // Update last_login
     await supabase
       .from('users')
       .update({ last_login: new Date().toISOString() })
-      .eq('id', data.id)
+      .eq('id', userData.id)
 
-    return data
-  },
-
-  async getCurrentUser(userId) {
-    const { data, error } = await supabase
-      .from('users')
-      .select('id, username, fullname, role, status')
-      .eq('id', userId)
-      .single()
-
-    if (error) throw error
-    return data
-  },
-
-  async createUser(userData, createdBy) {
-    const { data, error } = await supabase
-      .from('users')
-      .insert([
-        {
-          ...userData,
-          created_by: createdBy,
-          status: 'active',
-        }
-      ])
-      .select()
-      .single()
-
-    if (error) throw error
-    return data
+    return userData
   }
 }

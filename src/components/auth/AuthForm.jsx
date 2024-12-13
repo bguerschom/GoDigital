@@ -35,30 +35,26 @@ const AuthForm = () => {
 
              {/* Animated Background Flow */}
       <div className="absolute inset-0 overflow-hidden">
-        <svg className="absolute w-full h-full" preserveAspectRatio="none">
-          <path
-            className="animate-flow"
-            d="M0,200 C150,200 250,100 500,100 C750,100 850,200 1000,200"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path
-            className="animate-flow-delayed"
-            d="M0,250 C150,250 250,150 500,150 C750,150 850,250 1000,250"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path
-            className="animate-flow-slow"
-            d="M0,300 C150,300 250,200 500,200 C750,200 850,300 1000,300"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg> 
-
+        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A2647;stop-opacity:1">
+        <animate attributeName="stop-color" values="#0A2647;#1B3B6F;#0A2647" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#1B3B6F;stop-opacity:1">
+        <animate attributeName="stop-color" values="#1B3B6F;#0A2647;#1B3B6F" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <pattern id="pattern1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)">
+        <animate attributeName="r" values="1;3;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </pattern>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#grad1)"/>
+  <rect width="100%" height="100%" fill="url(#pattern1)"/>
+</svg>
         </div>
       
       <div className="w-full max-w-md">
